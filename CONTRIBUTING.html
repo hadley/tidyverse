@@ -43,6 +43,10 @@
 <script src="pkgdown.js"></script>
 <link href="tidyverse-2.css" rel="stylesheet">
 
+<!--optional theme-->
+<link href=".css" rel="stylesheet">
+
+
 
 
 <meta property="og:title" content="Contributing to tidyverse" />
@@ -90,7 +94,7 @@
         <a class="navbar-brand" href="index.html">tidyverse</a>
         <div class="info hidden-xs hidden-sm">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0.9000</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1.9000</span>
         </div>
       </div>
     </div>
@@ -139,7 +143,7 @@
 </li>
         <li>
   <a href="https://github.com/tidyverse/tidyverse/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -176,7 +180,7 @@
 <a href="#pull-request-process" class="anchor"></a>Pull request process</h3>
 <ul>
 <li><p>Fork the package and clone onto your computer. If you haven’t done this before, we recommend using <code>usethis::create_from_github("batpigandme/tidyverse", fork = TRUE)</code>.</p></li>
-<li>Install all development dependences with <code>devtools::install_dev_deps()</code>, and then make sure the package passes R CMD check by running <code>devtools::check()</code>. If R CMD check doesn’t pass cleanly, it’s a good idea to ask for help before continuing.</li>
+<li><p>Install all development dependences with <code>devtools::install_dev_deps()</code>, and then make sure the package passes R CMD check by running <code>devtools::check()</code>. If R CMD check doesn’t pass cleanly, it’s a good idea to ask for help before continuing.</p></li>
 <li><p>Create a Git branch for your pull request (PR). We recommend using <code>usethis::pr_init("brief-description-of-change")</code>.</p></li>
 <li><p>Make your changes, commit to git, and then create a PR by running <code>usethis::pr_push()</code>, and following the prompts in your browser. The title of your PR should briefly describe the change. The body of your PR should contain <code>Fixes #issue-number</code>.</p></li>
 <li><p>For user-facing changes, add a bullet to the top of <code>NEWS.md</code> (i.e. just below the first header). Follow the style described in <a href="https://style.tidyverse.org/news.html" class="uri">https://style.tidyverse.org/news.html</a>.</p></li>
@@ -187,7 +191,7 @@
 <a href="#code-style" class="anchor"></a>Code style</h3>
 <ul>
 <li><p>New code should follow the tidyverse <a href="https://style.tidyverse.org">style guide</a>. You can use the <a href="https://CRAN.R-project.org/package=styler">styler</a> package to apply these styles, but please don’t restyle code that has nothing to do with your PR.</p></li>
-<li><p>We use <a href="https://cran.r-project.org/package=roxygen2">roxygen2</a>, with <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/markdown.html">Markdown syntax</a>, for documentation.</p></li>
+<li><p>We use <a href="https://cran.r-project.org/package=roxygen2">roxygen2</a>, with <a href="https://roxygen2.r-lib.org/articles/rd-formatting.html">Markdown syntax</a>, for documentation.</p></li>
 <li><p>We use <a href="https://cran.r-project.org/package=testthat">testthat</a> for unit tests. Contributions with test cases included are easier to accept.</p></li>
 </ul>
 </div>

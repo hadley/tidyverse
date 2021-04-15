@@ -43,6 +43,10 @@
 <script src="../pkgdown.js"></script>
 <link href="../tidyverse-2.css" rel="stylesheet">
 
+<!--optional theme-->
+<link href="../.css" rel="stylesheet">
+
+
 
 
 <meta property="og:title" content="List all packages in the tidyverse — tidyverse_packages" />
@@ -91,7 +95,7 @@
         <a class="navbar-brand" href="../index.html">tidyverse</a>
         <div class="info hidden-xs hidden-sm">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0.9000</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1.9000</span>
         </div>
       </div>
     </div>
@@ -140,7 +144,7 @@
 </li>
         <li>
   <a href="https://github.com/tidyverse/tidyverse/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -166,7 +170,7 @@
     <p>List all packages in the tidyverse</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tidyverse_packages</span>(<span class='kw'>include_self</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>tidyverse_packages</span><span class='op'>(</span>include_self <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -179,12 +183,15 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>tidyverse_packages</span>()</div><div class='output co'>#&gt;  [1] "broom"      "cli"        "crayon"     "dbplyr"     "dplyr"     
-#&gt;  [6] "forcats"    "ggplot2"    "haven"      "hms"        "httr"      
-#&gt; [11] "jsonlite"   "lubridate"  "magrittr"   "modelr"     "pillar"    
-#&gt; [16] "purrr"      "readr"      "readxl"     "reprex"     "rlang"     
-#&gt; [21] "rstudioapi" "rvest"      "stringr"    "tibble"     "tidyr"     
-#&gt; [26] "xml2"       "tidyverse" </div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>tidyverse_packages</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;  [1] "broom"         "cli"           "crayon"        "dbplyr"       
+#&gt;  [5] "dplyr"         "dtplyr"        "forcats"       "googledrive"  
+#&gt;  [9] "googlesheets4" "ggplot2"       "haven"         "hms"          
+#&gt; [13] "httr"          "jsonlite"      "lubridate"     "magrittr"     
+#&gt; [17] "modelr"        "pillar"        "purrr"         "readr"        
+#&gt; [21] "readxl"        "reprex"        "rlang"         "rstudioapi"   
+#&gt; [25] "rvest"         "stringr"       "tibble"        "tidyr"        
+#&gt; [29] "xml2"          "tidyverse"    </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

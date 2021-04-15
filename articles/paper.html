@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><link href="../tidyverse-2.css" rel="stylesheet">
+<!--optional theme--><link href="../.css" rel="stylesheet">
 <meta property="og:title" content="Welcome to the Tidyverse">
 <meta property="og:description" content="tidyverse">
 <meta property="og:image" content="https://tidyverse.tidyverse.org/logo.png">
@@ -49,7 +50,7 @@
         <a class="navbar-brand" href="../index.html">tidyverse</a>
         <div class="info hidden-xs hidden-sm">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0.9000</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1.9000</span>
         </div>
       </div>
     </div>
@@ -98,7 +99,7 @@
 </li>
         <li>
   <a href="https://github.com/tidyverse/tidyverse/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -112,7 +113,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="paper_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Welcome to the Tidyverse</h1>
@@ -140,19 +141,21 @@
 <h1 class="hasAnchor">
 <a href="#tidyverse-package" class="anchor"></a>Tidyverse package</h1>
 <p>The tidyverse is a collection of packages that can easily be installed with a single “meta”-package, which is called “tidyverse”. This provides a convenient way of downloading and installing all tidyverse packages with a single R command:</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"tidyverse"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></code></pre></div>
 <p>The core tidyverse includes the packages that you’re likely to use in everyday data analyses, and these are attached when you attach the tidyverse package:</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>)
-<span class="co">#&gt; -- Attaching packages ---------------------- tidyverse 1.3.0.9000 --</span>
-<span class="co">#&gt; v ggplot2 3.3.1     v purrr   0.3.4</span>
-<span class="co">#&gt; v tibble  3.0.1     v dplyr   1.0.0</span>
-<span class="co">#&gt; v tidyr   1.1.0     v stringr 1.4.0</span>
-<span class="co">#&gt; v readr   1.3.1     v forcats 0.5.0</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
+<span class="co">#&gt; -- Attaching packages ---------------------- tidyverse 1.3.1.9000 --</span>
+<span class="co">#&gt; v ggplot2 3.3.3     v purrr   0.3.4</span>
+<span class="co">#&gt; v tibble  3.1.0     v dplyr   1.0.5</span>
+<span class="co">#&gt; v tidyr   1.1.3     v stringr 1.4.0</span>
+<span class="co">#&gt; v readr   1.4.0     v forcats 0.5.1</span>
 <span class="co">#&gt; -- Conflicts ------------------------------ tidyverse_conflicts() --</span>
 <span class="co">#&gt; x dplyr::filter() masks stats::filter()</span>
-<span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span></pre></body></html></div>
+<span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span></code></pre></div>
 <p>This is a convenient shortcut for attaching the core packages, produces a short report telling you which package versions you’re using, and succinctly informs you of any conflicts with previously loaded packages. As of tidyverse version 1.2.0, the core packages include dplyr <span class="citation">(Wickham et al. 2019)</span>, forcats <span class="citation">(Wickham 2019b)</span>, ggplot2 <span class="citation">(Wickham 2016)</span>, purrr <span class="citation">(Henry and Wickham 2019)</span>, readr <span class="citation">(Wickham and Hester 2018)</span>, stringr <span class="citation">(Wickham 2019d)</span>, tibble <span class="citation">(Müller and Wickham 2018)</span>, and tidyr <span class="citation">(Wickham and Henry 2019)</span>.</p>
-<p>Non-core packages are installed with <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("tidyverse")</a></code>, but are not attached by <code><a href="https://tidyverse.tidyverse.org/reference">library(tidyverse)</a></code>. They play more specialised roles, so will be attached by the analyst as needed. The non-core packages are: blob <span class="citation">(Wickham 2018a)</span>, feather <span class="citation">(Wickham 2019a)</span>, jsonlite <span class="citation">(Ooms 2014)</span>, glue <span class="citation">(Hester 2018)</span>, googledrive <span class="citation">(D’Agostino McGowan and Bryan 2019)</span>, haven <span class="citation">(Wickham and Miller 2018)</span>, hms <span class="citation">(Müller 2018)</span>, lubridate <span class="citation">(Spinu, Grolemund, and Wickham 2018)</span>, magrittr <span class="citation">(Bache and Wickham 2014)</span>, modelr <span class="citation">(Wickham 2018b)</span>, readxl <span class="citation">(Wickham and Bryan 2019)</span>, reprex <span class="citation">(Bryan et al. 2019)</span>, rvest <span class="citation">(Wickham 2019c)</span>, and xml2 <span class="citation">(Wickham, Hester, and Ooms 2019)</span>.</p>
+<p>Non-core packages are installed with <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("tidyverse")</a></code>, but are not attached by <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code>. They play more specialised roles, so will be attached by the analyst as needed. The non-core packages are: blob <span class="citation">(Wickham 2018a)</span>, feather <span class="citation">(Wickham 2019a)</span>, jsonlite <span class="citation">(Ooms 2014)</span>, glue <span class="citation">(Hester 2018)</span>, googledrive <span class="citation">(D’Agostino McGowan and Bryan 2019)</span>, haven <span class="citation">(Wickham and Miller 2018)</span>, hms <span class="citation">(Müller 2018)</span>, lubridate <span class="citation">(Spinu, Grolemund, and Wickham 2018)</span>, magrittr <span class="citation">(Bache and Wickham 2014)</span>, modelr <span class="citation">(Wickham 2018b)</span>, readxl <span class="citation">(Wickham and Bryan 2019)</span>, reprex <span class="citation">(Bryan et al. 2019)</span>, rvest <span class="citation">(Wickham 2019c)</span>, and xml2 <span class="citation">(Wickham, Hester, and Ooms 2019)</span>.</p>
 <p>The tidyverse package is designed with an eye for teaching: <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("tidyverse")</a></code> gets you a “batteries-included” set of 87 packages (at time of writing). This large set of dependencies means that it is not appropriate to use the tidyverse package within another package; instead, we recommend that package authors import only the specific packages that they use.</p>
 </div>
 <div id="components" class="section level1">
@@ -190,7 +193,7 @@
 <a href="#design-principles" class="anchor"></a>Design principles</h1>
 <p>We are still working to explicitly describe the unifying principles that make the tidyverse consistent, but you can read our latest thoughts at <a href="https://design.tidyverse.org/" class="uri">https://design.tidyverse.org/</a>. There is one particularly important principle that we want to call out here: the tidyverse is fundamentally <strong>human centred</strong>. That is, the tidyverse is designed to support the activities of a human data analyst, so to be effective tool builders, we must explicitly recognise and acknowledge the strengths and weaknesses of human cognition.</p>
 <p>This is particularly important for R, because it’s a language that’s used primarily by non-programmers, and we want to make it as easy as possible for first-time and end-user programmers to learn the tidyverse. We believe deeply in the motivations that lead to the creation of S: “to turn ideas into software, quickly and faithfully” <span class="citation">(Chambers 1998)</span>. This means that we spend a lot of time thinking about interface design, and have recently started experimenting with <a href="https://github.com/hadley/table-shapes">surveys</a> to help guide interface choices.</p>
-<p>Similarly, the tidyverse is not just the collection of packages — it is also the community of people who use them. We want the tidyverse to be a diverse, inclusive, and welcoming community. We are still developing our skills in this area, but our existing approaches include active use of Twitter to <a href="https://twitter.com/hadleywickham/status/948722811232751617">solicit feedback</a>, announce updates, and generally listen to the community. We also keep users apprised of major upcoming changes through the <a href="https://www.tidyverse.org/articles/">tidyverse blog</a>, run <a href="https://www.tidyverse.org/articles/2018/08/tidyverse-developer-day/">developer days</a>, and support lively discussions on <a href="https://community.rstudio.com">RStudio community</a>.</p>
+<p>Similarly, the tidyverse is not just the collection of packages — it is also the community of people who use them. We want the tidyverse to be a diverse, inclusive, and welcoming community. We are still developing our skills in this area, but our existing approaches include active use of Twitter to <a href="https://twitter.com/hadleywickham/status/948722811232751617">solicit feedback</a>, announce updates, and generally listen to the community. We also keep users apprised of major upcoming changes through the <a href="https://www.tidyverse.org/blog/">tidyverse blog</a>, run <a href="https://www.tidyverse.org/blog/2018/08/tidyverse-developer-day/">developer days</a>, and support lively discussions on <a href="https://community.rstudio.com">RStudio community</a>.</p>
 </div>
 <div id="acknowledgments" class="section level1">
 <h1 class="hasAnchor">
@@ -202,55 +205,55 @@
 <a href="#references" class="anchor"></a>References</h1>
 <div id="refs" class="references">
 <div id="ref-R-rmarkdown">
-<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2018. <em>rmarkdown: Dynamic Documents for R</em>. <a href="https://rmarkdown.rstudio.com" class="uri">https://rmarkdown.rstudio.com</a>.</p>
+<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2018. <em>rmarkdown: Dynamic Documents for R</em>. <a href="https://rmarkdown.rstudio.com">https://rmarkdown.rstudio.com</a>.</p>
 </div>
 <div id="ref-R-magrittr">
-<p>Bache, Stefan Milton, and Hadley Wickham. 2014. <em>magrittr: A Forward-Pipe Operator for R</em>. <a href="https://CRAN.R-project.org/package=magrittr" class="uri">https://CRAN.R-project.org/package=magrittr</a>.</p>
+<p>Bache, Stefan Milton, and Hadley Wickham. 2014. <em>magrittr: A Forward-Pipe Operator for R</em>. <a href="https://CRAN.R-project.org/package=magrittr">https://CRAN.R-project.org/package=magrittr</a>.</p>
 </div>
 <div id="ref-R-reprex">
-<p>Bryan, Jennifer, Jim Hester, David Robinson, and Hadley Wickham. 2019. <em>reprex: Prepare Reproducible Example Code via the Clipboard</em>. <a href="https://CRAN.R-project.org/package=reprex" class="uri">https://CRAN.R-project.org/package=reprex</a>.</p>
+<p>Bryan, Jennifer, Jim Hester, David Robinson, and Hadley Wickham. 2019. <em>reprex: Prepare Reproducible Example Code via the Clipboard</em>. <a href="https://CRAN.R-project.org/package=reprex">https://CRAN.R-project.org/package=reprex</a>.</p>
 </div>
 <div id="ref-programming-with-data">
 <p>Chambers, John M. 1998. <em>Programming with Data: A Guide to the S Language</em>. Springer.</p>
 </div>
 <div id="ref-R-shiny">
-<p>Chang, Winston, Joe Cheng, JJ Allaire, Yihui Xie, and Jonathan McPherson. 2019. <em>shiny: Web Application Framework for R</em>. <a href="https://CRAN.R-project.org/package=shiny" class="uri">https://CRAN.R-project.org/package=shiny</a>.</p>
+<p>Chang, Winston, Joe Cheng, JJ Allaire, Yihui Xie, and Jonathan McPherson. 2019. <em>shiny: Web Application Framework for R</em>. <a href="https://CRAN.R-project.org/package=shiny">https://CRAN.R-project.org/package=shiny</a>.</p>
 </div>
 <div id="ref-R-googledrive">
-<p>D’Agostino McGowan, Lucy, and Jennifer Bryan. 2019. <em>googledrive: An Interface to Google Drive</em>. <a href="https://CRAN.R-project.org/package=googledrive" class="uri">https://CRAN.R-project.org/package=googledrive</a>.</p>
+<p>D’Agostino McGowan, Lucy, and Jennifer Bryan. 2019. <em>googledrive: An Interface to Google Drive</em>. <a href="https://CRAN.R-project.org/package=googledrive">https://CRAN.R-project.org/package=googledrive</a>.</p>
 </div>
 <div id="ref-R-datatable">
-<p>Dowle, Matt, and Arun Srinivasan. 2019. <em>data.table: Extension of ‘Data.frame‘</em>. <a href="https://CRAN.R-project.org/package=data.table" class="uri">https://CRAN.R-project.org/package=data.table</a>.</p>
+<p>Dowle, Matt, and Arun Srinivasan. 2019. <em>data.table: Extension of ‘Data.frame‘</em>. <a href="https://CRAN.R-project.org/package=data.table">https://CRAN.R-project.org/package=data.table</a>.</p>
 </div>
 <div id="ref-Bioconductor">
 <p>Gentleman, Robert C, Vincent J Carey, Douglas M Bates, Ben Bolstad, Marcel Dettling, Sandrine Dudoit, Byron Ellis, et al. 2004. “Bioconductor: Open Software Development for Computational Biology and Bioinformatics.” <em>Genome Biology</em> 5 (10): R80.</p>
 </div>
 <div id="ref-R-purrr">
-<p>Henry, Lionel, and Hadley Wickham. 2019. <em>purrr: Functional Programming Tools</em>. <a href="https://CRAN.R-project.org/package=purrr" class="uri">https://CRAN.R-project.org/package=purrr</a>.</p>
+<p>Henry, Lionel, and Hadley Wickham. 2019. <em>purrr: Functional Programming Tools</em>. <a href="https://CRAN.R-project.org/package=purrr">https://CRAN.R-project.org/package=purrr</a>.</p>
 </div>
 <div id="ref-R-glue">
-<p>Hester, Jim. 2018. <em>glue: Interpreted String Literals</em>. <a href="https://CRAN.R-project.org/package=glue" class="uri">https://CRAN.R-project.org/package=glue</a>.</p>
+<p>Hester, Jim. 2018. <em>glue: Interpreted String Literals</em>. <a href="https://CRAN.R-project.org/package=glue">https://CRAN.R-project.org/package=glue</a>.</p>
 </div>
 <div id="ref-Huber2015">
-<p>Huber, W., V. J. Carey, R. Gentleman, S. Anders, M. Carlson, B. S. Carvalho, H. C. Bravo, et al. 2015. “Orchestrating High-Throughput Genomic Analysis with Bioconductor.” <em>Nature Methods</em> 12 (2): 115–21. <a href="http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html" class="uri">http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html</a>.</p>
+<p>Huber, W., V. J. Carey, R. Gentleman, S. Anders, M. Carlson, B. S. Carvalho, H. C. Bravo, et al. 2015. “Orchestrating High-Throughput Genomic Analysis with Bioconductor.” <em>Nature Methods</em> 12 (2): 115–21. <a href="https://www.nature.com/articles/nmeth.3252">https://www.nature.com/articles/nmeth.3252</a>.</p>
 </div>
 <div id="ref-R-tidymodels">
-<p>Kuhn, Max, and Hadley Wickham. 2018. <em>tidymodels: Easily Install and Load the ’Tidymodels’ Packages</em>. <a href="https://CRAN.R-project.org/package=tidymodels" class="uri">https://CRAN.R-project.org/package=tidymodels</a>.</p>
+<p>Kuhn, Max, and Hadley Wickham. 2018. <em>tidymodels: Easily Install and Load the ’Tidymodels’ Packages</em>. <a href="https://CRAN.R-project.org/package=tidymodels">https://CRAN.R-project.org/package=tidymodels</a>.</p>
 </div>
 <div id="ref-R-hms">
-<p>Müller, Kirill. 2018. <em>hms: Pretty Time of Day</em>. <a href="https://CRAN.R-project.org/package=hms" class="uri">https://CRAN.R-project.org/package=hms</a>.</p>
+<p>Müller, Kirill. 2018. <em>hms: Pretty Time of Day</em>. <a href="https://CRAN.R-project.org/package=hms">https://CRAN.R-project.org/package=hms</a>.</p>
 </div>
 <div id="ref-R-tibble">
-<p>Müller, Kirill, and Hadley Wickham. 2018. <em>tibble: Simple Data Frames</em>. <a href="https://CRAN.R-project.org/package=tibble" class="uri">https://CRAN.R-project.org/package=tibble</a>.</p>
+<p>Müller, Kirill, and Hadley Wickham. 2018. <em>tibble: Simple Data Frames</em>. <a href="https://CRAN.R-project.org/package=tibble">https://CRAN.R-project.org/package=tibble</a>.</p>
 </div>
 <div id="ref-R-jsonlite">
-<p>Ooms, Jeroen. 2014. “The Jsonlite Package: A Practical and Consistent Mapping Between JSON Data and R Objects.” <em>arXiv:1403.2805 [stat.CO]</em>. <a href="https://arxiv.org/abs/1403.2805" class="uri">https://arxiv.org/abs/1403.2805</a>.</p>
+<p>Ooms, Jeroen. 2014. “The Jsonlite Package: A Practical and Consistent Mapping Between JSON Data and R Objects.” <em>arXiv:1403.2805 [stat.CO]</em>. <a href="https://arxiv.org/abs/1403.2805">https://arxiv.org/abs/1403.2805</a>.</p>
 </div>
 <div id="ref-R-core">
-<p>R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+<p>R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
 </div>
 <div id="ref-R-lubridate">
-<p>Spinu, Vitalie, Garrett Grolemund, and Hadley Wickham. 2018. <em>lubridate: Make Dealing with Dates a Little Easier</em>. <a href="https://CRAN.R-project.org/package=lubridate" class="uri">https://CRAN.R-project.org/package=lubridate</a>.</p>
+<p>Spinu, Vitalie, Garrett Grolemund, and Hadley Wickham. 2018. <em>lubridate: Make Dealing with Dates a Little Easier</em>. <a href="https://CRAN.R-project.org/package=lubridate">https://CRAN.R-project.org/package=lubridate</a>.</p>
 </div>
 <div id="ref-tidy-data">
 <p>Wickham, Hadley. 2014. “Tidy Data.” <em>The Journal of Statistical Software</em> 59.</p>
@@ -259,46 +262,46 @@
 <p>———. 2016. <em>ggplot2: Elegant Graphics for Data Analysis</em>. useR. Springer.</p>
 </div>
 <div id="ref-R-blob">
-<p>———. 2018a. <em>blob: A Simple S3 Class for Representing Vectors of Binary Data (’Blobs’)</em>. <a href="https://CRAN.R-project.org/package=blob" class="uri">https://CRAN.R-project.org/package=blob</a>.</p>
+<p>———. 2018a. <em>blob: A Simple S3 Class for Representing Vectors of Binary Data (’Blobs’)</em>. <a href="https://CRAN.R-project.org/package=blob">https://CRAN.R-project.org/package=blob</a>.</p>
 </div>
 <div id="ref-R-modelr">
-<p>———. 2018b. <em>modelr: Modelling Functions That Work with the Pipe</em>. <a href="https://CRAN.R-project.org/package=modelr" class="uri">https://CRAN.R-project.org/package=modelr</a>.</p>
+<p>———. 2018b. <em>modelr: Modelling Functions That Work with the Pipe</em>. <a href="https://CRAN.R-project.org/package=modelr">https://CRAN.R-project.org/package=modelr</a>.</p>
 </div>
 <div id="ref-R-feather">
-<p>———. 2019a. <em>Feather: R Bindings to the Feather API</em>. <a href="https://CRAN.R-project.org/package=feather" class="uri">https://CRAN.R-project.org/package=feather</a>.</p>
+<p>———. 2019a. <em>Feather: R Bindings to the Feather API</em>. <a href="https://CRAN.R-project.org/package=feather">https://CRAN.R-project.org/package=feather</a>.</p>
 </div>
 <div id="ref-R-forcats">
-<p>———. 2019b. <em>forcats: Tools for Working with Categorical Variables (Factors)</em>. <a href="https://CRAN.R-project.org/package=forcats" class="uri">https://CRAN.R-project.org/package=forcats</a>.</p>
+<p>———. 2019b. <em>forcats: Tools for Working with Categorical Variables (Factors)</em>. <a href="https://CRAN.R-project.org/package=forcats">https://CRAN.R-project.org/package=forcats</a>.</p>
 </div>
 <div id="ref-R-rvest">
-<p>———. 2019c. <em>rvest: Easily Harvest (Scrape) Web Pages</em>. <a href="https://CRAN.R-project.org/package=rvest" class="uri">https://CRAN.R-project.org/package=rvest</a>.</p>
+<p>———. 2019c. <em>rvest: Easily Harvest (Scrape) Web Pages</em>. <a href="https://CRAN.R-project.org/package=rvest">https://CRAN.R-project.org/package=rvest</a>.</p>
 </div>
 <div id="ref-R-stringr">
-<p>———. 2019d. <em>stringr: Simple, Consistent Wrappers for Common String Operations</em>. <a href="https://CRAN.R-project.org/package=stringr" class="uri">https://CRAN.R-project.org/package=stringr</a>.</p>
+<p>———. 2019d. <em>stringr: Simple, Consistent Wrappers for Common String Operations</em>. <a href="https://CRAN.R-project.org/package=stringr">https://CRAN.R-project.org/package=stringr</a>.</p>
 </div>
 <div id="ref-R-readxl">
-<p>Wickham, Hadley, and Jennifer Bryan. 2019. <em>readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl" class="uri">https://CRAN.R-project.org/package=readxl</a>.</p>
+<p>Wickham, Hadley, and Jennifer Bryan. 2019. <em>readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl">https://CRAN.R-project.org/package=readxl</a>.</p>
 </div>
 <div id="ref-R-dplyr">
-<p>Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2019. <em>dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr" class="uri">https://CRAN.R-project.org/package=dplyr</a>.</p>
+<p>Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2019. <em>dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr">https://CRAN.R-project.org/package=dplyr</a>.</p>
 </div>
 <div id="ref-r4ds">
 <p>Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. O’Reilly Media, Inc.</p>
 </div>
 <div id="ref-R-tidyr">
-<p>Wickham, Hadley, and Lionel Henry. 2019. <em>tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr" class="uri">https://CRAN.R-project.org/package=tidyr</a>.</p>
+<p>Wickham, Hadley, and Lionel Henry. 2019. <em>tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr">https://CRAN.R-project.org/package=tidyr</a>.</p>
 </div>
 <div id="ref-R-readr">
-<p>Wickham, Hadley, and Jim Hester. 2018. <em>readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr" class="uri">https://CRAN.R-project.org/package=readr</a>.</p>
+<p>Wickham, Hadley, and Jim Hester. 2018. <em>readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr">https://CRAN.R-project.org/package=readr</a>.</p>
 </div>
 <div id="ref-R-xml2">
-<p>Wickham, Hadley, Jim Hester, and Jeroen Ooms. 2019. <em>xml2: Parse XML</em>. <a href="https://CRAN.R-project.org/package=xml2" class="uri">https://CRAN.R-project.org/package=xml2</a>.</p>
+<p>Wickham, Hadley, Jim Hester, and Jeroen Ooms. 2019. <em>xml2: Parse XML</em>. <a href="https://CRAN.R-project.org/package=xml2">https://CRAN.R-project.org/package=xml2</a>.</p>
 </div>
 <div id="ref-R-haven">
-<p>Wickham, Hadley, and Evan Miller. 2018. <em>haven: Import and Export SPSS, Stata, and SAS Files</em>. <a href="https://CRAN.R-project.org/package=haven" class="uri">https://CRAN.R-project.org/package=haven</a>.</p>
+<p>Wickham, Hadley, and Evan Miller. 2018. <em>haven: Import and Export SPSS, Stata, and SAS Files</em>. <a href="https://CRAN.R-project.org/package=haven">https://CRAN.R-project.org/package=haven</a>.</p>
 </div>
 <div id="ref-wilkinson2005">
-<p>Wilkinson, Leland. 2005. <em>The Grammar of Graphics</em>. Berlin, Heidelberg: Springer-Verlag. <a href="https://doi.org/10.1007/0-387-28695-0" class="uri">https://doi.org/10.1007/0-387-28695-0</a>.</p>
+<p>Wilkinson, Leland. 2005. <em>The Grammar of Graphics</em>. Berlin, Heidelberg: Springer-Verlag. <a href="https://doi.org/10.1007/0-387-28695-0">https://doi.org/10.1007/0-387-28695-0</a>.</p>
 </div>
 </div>
 </div>
