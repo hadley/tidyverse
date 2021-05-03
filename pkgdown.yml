@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   manifesto: manifesto.html
   paper: paper.html
-last_built: 2021-04-15T16:55Z
+last_built: 2021-05-03T15:44Z
 urls:
   reference: https://tidyverse.tidyverse.org/reference
   article: https://tidyverse.tidyverse.org/articles
